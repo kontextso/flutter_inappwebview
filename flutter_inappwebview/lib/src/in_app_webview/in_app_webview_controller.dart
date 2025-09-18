@@ -576,6 +576,21 @@ class InAppWebViewController {
   ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getViewId}
   dynamic getViewId() => platform.getViewId();
 
+  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getNativeWebViewByInstanceId}
+  static Future<dynamic> getNativeWebViewByInstanceId(String instanceId) =>
+      PlatformInAppWebViewController.static().getNativeWebViewByInstanceId(instanceId);
+
+  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getAllRegisteredInstanceIds}
+  static Future<List<String>> getAllRegisteredInstanceIds() =>
+      PlatformInAppWebViewController.static().getAllRegisteredInstanceIds();
+
+  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.isInstanceIdRegistered}
+  static Future<bool> isInstanceIdRegistered(String instanceId) =>
+      PlatformInAppWebViewController.static().isInstanceIdRegistered(instanceId);
+
+  /// Gets the instance ID of this WebView controller.
+  Future<String?> getInstanceId() => platform.getInstanceId();
+
   ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.dispose}
   void dispose({bool isKeepAlive = false}) =>
       platform.dispose(isKeepAlive: isKeepAlive);

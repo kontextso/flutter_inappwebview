@@ -2438,6 +2438,29 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setSafeBrowsingWhitelist is not implemented on the current platform');
   }
 
+  /// Get native webview instance by instanceId.
+  Future<dynamic> getNativeWebViewByInstanceId(String instanceId) {
+    throw UnimplementedError(
+        'getNativeWebViewByInstanceId is not implemented on the current platform');
+  }
+
+  /// Returns all registered webview instance ids.
+  Future<List<String>> getAllRegisteredInstanceIds() {
+    throw UnimplementedError(
+        'getAllRegisteredInstanceIds is not implemented on the current platform');
+  }
+
+  /// Checks if a webview instance id is registered.
+  Future<bool> isInstanceIdRegistered(String instanceId) {
+    throw UnimplementedError(
+        'isInstanceIdRegistered is not implemented on the current platform');
+  }
+
+  Future<String?> getInstanceId() {
+    throw UnimplementedError(
+        'instanceId is not implemented on the current platform');
+  }
+
   ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.dispose}
   ///Disposes the controller.
   ///{@endtemplate}

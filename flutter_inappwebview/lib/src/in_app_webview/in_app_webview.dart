@@ -37,6 +37,7 @@ class InAppWebView extends StatefulWidget {
   ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewWidget}
   InAppWebView({
     Key? key,
+    String? instanceId,
     Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers,
     int? windowId,
     HeadlessInAppWebView? headlessWebView,
@@ -297,6 +298,7 @@ class InAppWebView extends StatefulWidget {
   }) : this.fromPlatformCreationParams(
             key: key,
             params: PlatformInAppWebViewWidgetCreationParams(
+              instanceId: instanceId,
               controllerFromPlatform:
                   (PlatformInAppWebViewController controller) =>
                       InAppWebViewController.fromPlatform(platform: controller),

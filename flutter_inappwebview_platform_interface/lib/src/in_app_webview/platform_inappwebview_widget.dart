@@ -26,6 +26,7 @@ class PlatformInAppWebViewWidgetCreationParams
       this.keepAlive,
       this.preventGestureDelay,
       this.webViewEnvironment,
+      this.instanceId,
       super.controllerFromPlatform,
       super.windowId,
       super.onWebViewCreated,
@@ -192,6 +193,10 @@ class PlatformInAppWebViewWidgetCreationParams
   ///**Officially Supported Platforms/Implementations**:
   ///- Windows
   final PlatformWebViewEnvironment? webViewEnvironment;
+
+  /// Optional identifier for this WebView instance to enable
+  /// external tools (like OMID) to locate the exact native WebView.
+  final String? instanceId;
 }
 
 /// Interface for a platform implementation of a web view widget.

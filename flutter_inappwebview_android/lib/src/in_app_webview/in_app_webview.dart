@@ -21,6 +21,7 @@ class AndroidInAppWebViewWidgetCreationParams
   AndroidInAppWebViewWidgetCreationParams(
       {super.controllerFromPlatform,
       super.key,
+      super.instanceId,
       super.layoutDirection,
       super.gestureRecognizers,
       super.headlessWebView,
@@ -143,6 +144,7 @@ class AndroidInAppWebViewWidgetCreationParams
       : this(
             controllerFromPlatform: params.controllerFromPlatform,
             key: params.key,
+            instanceId: params.instanceId,
             layoutDirection: params.layoutDirection,
             gestureRecognizers: params.gestureRecognizers,
             headlessWebView: params.headlessWebView,
@@ -354,7 +356,8 @@ class AndroidInAppWebViewWidget extends PlatformInAppWebViewWidget {
                     .toList() ??
                 [],
             'pullToRefreshSettings': pullToRefreshSettings,
-            'keepAliveId': this.params.keepAlive?.id
+            'keepAliveId': this.params.keepAlive?.id,
+            'instanceId': this.params.instanceId,
           },
         )
           ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)

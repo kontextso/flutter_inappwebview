@@ -2752,6 +2752,27 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
   }
 
   @override
+  Future<dynamic> getNativeWebViewByInstanceId(String instanceId) async {
+    return await _staticChannel.invokeMethod('getNativeWebViewByInstanceId', {'instanceId': instanceId});
+  }
+
+  @override
+  Future<List<String>> getAllRegisteredInstanceIds() async {
+    final result = await _staticChannel.invokeMethod<List<dynamic>>('getAllRegisteredInstanceIds');
+    return result?.whereType<String>().toList() ?? [];
+  }
+
+  @override
+  Future<bool> isInstanceIdRegistered(String instanceId) async {
+    return await _staticChannel.invokeMethod<bool>('isInstanceIdRegistered', {'instanceId': instanceId}) ?? false;
+  }
+
+  @override
+  Future<String?> getInstanceId() async {
+    return await channel?.invokeMethod<String>('getInstanceId');
+  }
+
+  @override
   void dispose({bool isKeepAlive = false}) {
     disposeChannel(removeMethodCallHandler: !isKeepAlive);
     _inAppBrowser = null;

@@ -52,6 +52,7 @@ public class FlutterWebView implements PlatformWebView {
     Integer windowId = (Integer) params.get("windowId");
     List<Map<String, Object>> initialUserScripts = (List<Map<String, Object>>) params.get("initialUserScripts");
     Map<String, Object> pullToRefreshInitialSettings = (Map<String, Object>) params.get("pullToRefreshSettings");
+    String instanceId = (String) params.get("instanceId");
 
     InAppWebViewSettings customSettings = new InAppWebViewSettings();
     customSettings.parse(initialSettings);
@@ -64,7 +65,7 @@ public class FlutterWebView implements PlatformWebView {
     }
 
     webView = new InAppWebView(context, plugin, id, windowId, customSettings, contextMenu, 
-            customSettings.useHybridComposition ? null : plugin.flutterView, userScripts);
+            customSettings.useHybridComposition ? null : plugin.flutterView, userScripts, instanceId);
     displayListenerProxy.onPostWebViewInitialization(displayManager);
 
     // set MATCH_PARENT layout params to the WebView, otherwise it won't take all the available space!

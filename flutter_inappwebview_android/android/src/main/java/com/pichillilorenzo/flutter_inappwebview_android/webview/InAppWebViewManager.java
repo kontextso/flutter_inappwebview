@@ -17,8 +17,11 @@ import androidx.webkit.WebViewFeature;
 
 import com.pichillilorenzo.flutter_inappwebview_android.InAppWebViewFlutterPlugin;
 import com.pichillilorenzo.flutter_inappwebview_android.types.ChannelDelegateImpl;
+import com.pichillilorenzo.flutter_inappwebview_android.webview.WebViewInstanceRegistry;
 import com.pichillilorenzo.flutter_inappwebview_android.webview.in_app_webview.FlutterWebView;
+import com.pichillilorenzo.flutter_inappwebview_android.webview.in_app_webview.InAppWebView;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -162,6 +165,33 @@ public class InAppWebViewManager extends ChannelDelegateImpl {
         }
         result.success(true);
         break;
+      case "getNativeWebViewByInstanceId":
+      {
+        String instanceId = (String) call.argument("instanceId");
+        if (instanceId == null) {
+          result.success(null);
+          break;
+        }
+        InAppWebView nativeWebView = WebViewInstanceRegistry.get(instanceId);
+        if (nativeWebView != null) {
+          HashMap<String, Object> webViewInfo = new HashMap<>();
+          webViewInfo.put("instanceId", instanceId);
+          webViewInfo.put("hashCode", System.identityHashCode(nativeWebView));
+          result.success(webViewInfo);
+        } else {
+          result.success(null);
+        }
+      }
+      break;
+      case "getAllRegisteredInstanceIds":
+        result.success(new ArrayList<>(WebViewInstanceRegistry.getRegisteredInstanceIds()));
+        break;
+      case "isInstanceIdRegistered":
+      {
+        String instanceId = (String) call.argument("instanceId");
+        result.success(instanceId != null && WebViewInstanceRegistry.isRegistered(instanceId));
+      }
+      break;
       default:
         result.notImplemented();
     }
@@ -214,6 +244,7 @@ public class InAppWebViewManager extends ChannelDelegateImpl {
     }
     keepAliveWebViews.clear();
     windowWebViewMessages.clear();
+    WebViewInstanceRegistry.clear();
     plugin = null;
   }
 }

@@ -67,6 +67,10 @@ public class FlutterWebViewFactory extends PlatformViewFactory {
       flutterWebView = new FlutterWebView(plugin, context, viewId, params);
     }
 
+    if (flutterWebView != null && flutterWebView.webView != null) {
+      flutterWebView.webView.setInstanceId((String) params.get("instanceId"));
+    }
+
     if (keepAliveId != null && inAppWebViewManager != null) {
       inAppWebViewManager.keepAliveWebViews.put(keepAliveId, flutterWebView);
     }

@@ -92,6 +92,9 @@ public class WebViewChannelDelegate extends ChannelDelegateImpl {
       case getProgress:
         result.success((webView != null) ? webView.getProgress() : null);
         break;
+      case getInstanceId:
+        result.success((webView != null) ? webView.getInstanceId() : null);
+        break;
       case loadUrl:
         if (webView != null) {
           Map<String, Object> urlRequest = (Map<String, Object>) call.argument("urlRequest");

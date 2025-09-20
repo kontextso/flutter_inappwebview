@@ -95,6 +95,7 @@ import com.pichillilorenzo.flutter_inappwebview_android.webview.ContextMenuSetti
 import com.pichillilorenzo.flutter_inappwebview_android.webview.InAppWebViewInterface;
 import com.pichillilorenzo.flutter_inappwebview_android.webview.JavaScriptBridgeInterface;
 import com.pichillilorenzo.flutter_inappwebview_android.webview.WebViewChannelDelegate;
+import com.pichillilorenzo.flutter_inappwebview_android.webview.WebViewInstanceRegistry;
 import com.pichillilorenzo.flutter_inappwebview_android.webview.web_message.WebMessageChannel;
 import com.pichillilorenzo.flutter_inappwebview_android.webview.web_message.WebMessageListener;
 
@@ -147,6 +148,8 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
   public LinearLayout floatingContextMenu = null;
   @Nullable
   public Map<String, Object> contextMenu = null;
+  @Nullable
+  private String instanceId = null;
   public Handler mainLooperHandler = new Handler(getWebViewLooper());
   static Handler mHandler = new Handler();
 
@@ -191,7 +194,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
   public InAppWebView(Context context, @NonNull InAppWebViewFlutterPlugin plugin,
                       @NonNull Object id, @Nullable Integer windowId, InAppWebViewSettings customSettings,
                       @Nullable Map<String, Object> contextMenu, View containerView,
-                      List<UserScript> userScripts) {
+                      List<UserScript> userScripts, @Nullable String instanceId) {
     super(context, containerView, customSettings.useHybridComposition);
     this.plugin = plugin;
     this.id = id;
@@ -201,6 +204,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     this.customSettings = customSettings;
     this.contextMenu = contextMenu;
     this.initialUserOnlyScripts = userScripts;
+    setInstanceId(instanceId);
     if (plugin != null && plugin.activity != null) {
       plugin.activity.registerForContextMenu(this);
     }
@@ -2016,6 +2020,24 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
   }
 
   @Nullable
+  public String getInstanceId() {
+    return instanceId;
+  }
+
+  public void setInstanceId(@Nullable String instanceId) {
+    if (TextUtils.equals(this.instanceId, instanceId)) {
+      return;
+    }
+    if (this.instanceId != null) {
+      WebViewInstanceRegistry.unregister(this.instanceId, this);
+    }
+    this.instanceId = instanceId;
+    if (instanceId != null) {
+      WebViewInstanceRegistry.register(instanceId, this);
+    }
+  }
+
+  @Nullable
   @Override
   public WebViewChannelDelegate getChannelDelegate() {
     return channelDelegate;
@@ -2028,6 +2050,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
 
   @Override
   public void dispose() {
+    setInstanceId(null);
     if (channelDelegate != null) {
       channelDelegate.dispose();
       channelDelegate = null;

@@ -4,6 +4,7 @@ public enum WebViewChannelDelegateMethods {
   getUrl,
   getTitle,
   getProgress,
+  getInstanceId,
   loadUrl,
   postUrl,
   loadData,

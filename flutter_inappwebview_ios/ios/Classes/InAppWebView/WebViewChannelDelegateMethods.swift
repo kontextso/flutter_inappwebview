@@ -11,6 +11,7 @@ public enum WebViewChannelDelegateMethods: String {
     case getUrl = "getUrl"
     case getTitle = "getTitle"
     case getProgress = "getProgress"
+    case getInstanceId = "getInstanceId"
     case loadUrl = "loadUrl"
     case postUrl = "postUrl"
     case loadData = "loadData"

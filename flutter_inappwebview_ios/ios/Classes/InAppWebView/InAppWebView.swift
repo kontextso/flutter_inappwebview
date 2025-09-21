@@ -31,6 +31,16 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
     var currentOriginalUrl: URL?
     var inFullscreen = false
     var preventGestureDelay = false
+    public var instanceId: String? {
+        didSet {
+            if let oldValue = oldValue {
+                WebViewInstanceRegistry.unregister(instanceId: oldValue, webView: self)
+            }
+            if let instanceId = instanceId {
+                WebViewInstanceRegistry.register(instanceId: instanceId, webView: self)
+            }
+        }
+    }
     
     private static var sslCertificatesMap: [String: SslCertificate] = [:] // [URL host name : SslCertificate]
     private static var credentialsProposed: [URLCredential] = []
@@ -3265,6 +3275,7 @@ if(window.\(JAVASCRIPT_BRIDGE_NAME)[\(_callHandlerID)] != null) {
     }
     
     public func dispose() {
+        instanceId = nil
         channelDelegate?.dispose()
         channelDelegate = nil
         runWindowBeforeCreatedCallbacks()
@@ -3331,6 +3342,7 @@ if(window.\(JAVASCRIPT_BRIDGE_NAME)[\(_callHandlerID)] != null) {
     }
     
     deinit {
+        instanceId = nil
         debugPrint("InAppWebView - dealloc")
     }
 }

@@ -18,6 +18,7 @@ class IOSInAppWebViewWidgetCreationParams
   IOSInAppWebViewWidgetCreationParams(
       {super.controllerFromPlatform,
       super.key,
+      super.instanceId,
       super.layoutDirection,
       super.gestureRecognizers,
       super.headlessWebView,
@@ -140,6 +141,7 @@ class IOSInAppWebViewWidgetCreationParams
       : this(
             controllerFromPlatform: params.controllerFromPlatform,
             key: params.key,
+            instanceId: params.instanceId,
             layoutDirection: params.layoutDirection,
             gestureRecognizers: params.gestureRecognizers,
             headlessWebView: params.headlessWebView,
@@ -324,7 +326,8 @@ class IOSInAppWebViewWidget extends PlatformInAppWebViewWidget {
             params.initialUserScripts?.map((e) => e.toMap()).toList() ?? [],
         'pullToRefreshSettings': pullToRefreshSettings,
         'keepAliveId': params.keepAlive?.id,
-        'preventGestureDelay': params.preventGestureDelay
+        'preventGestureDelay': params.preventGestureDelay,
+        'instanceId': params.instanceId
       },
       creationParamsCodec: const StandardMessageCodec(),
     );

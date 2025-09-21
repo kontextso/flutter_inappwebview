@@ -50,6 +50,25 @@ public class InAppWebViewManager: ChannelDelegate {
                 clearAllCache(includeDiskFiles: includeDiskFiles, completionHandler: {
                     result(true)
                 })
+            case "getNativeWebViewByInstanceId":
+                if let instanceId = arguments?["instanceId"] as? String,
+                let nativeWebView = WebViewInstanceRegistry.get(instanceId: instanceId) {
+                    let webViewInfo: [String: Any] = [
+                        "instanceId": instanceId,
+                        "hashCode": Int(bitPattern: Unmanaged.passUnretained(nativeWebView).toOpaque())
+                    ]
+                    result(webViewInfo)
+                } else {
+                    result(nil)
+                }
+            case "getAllRegisteredInstanceIds":
+                result(WebViewInstanceRegistry.getRegisteredInstanceIds())
+            case "isInstanceIdRegistered":
+                if let instanceId = arguments?["instanceId"] as? String {
+                    result(WebViewInstanceRegistry.isRegistered(instanceId: instanceId))
+                } else {
+                    result(false)
+                }
             default:
                 result(FlutterMethodNotImplemented)
                 break
@@ -119,6 +138,7 @@ public class InAppWebViewManager: ChannelDelegate {
         windowWebViews.removeAll()
         webViewForUserAgent = nil
         defaultUserAgent = nil
+        WebViewInstanceRegistry.clear()
         plugin = nil
     }
     

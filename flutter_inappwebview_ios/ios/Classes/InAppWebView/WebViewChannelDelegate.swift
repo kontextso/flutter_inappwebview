@@ -34,6 +34,9 @@ public class WebViewChannelDelegate: ChannelDelegate {
         case .getProgress:
             result( (webView != nil) ? Int(webView!.estimatedProgress * 100) : nil )
             break
+        case .getInstanceId:
+            result(webView?.instanceId)
+            break
         case .loadUrl:
             let urlRequest = arguments!["urlRequest"] as! [String:Any?]
             let allowingReadAccessTo = arguments!["allowingReadAccessTo"] as? String

@@ -26,6 +26,7 @@ public class FlutterWebViewController: NSObject, FlutterPlatformView, Disposable
         let windowId = params["windowId"] as? Int64
         let initialUserScripts = params["initialUserScripts"] as? [[String: Any]]
         let pullToRefreshInitialSettings = params["pullToRefreshSettings"] as! [String: Any?]
+        let instanceId = params["instanceId"] as? String
         
         var userScripts: [UserScript] = []
         if let initialUserScripts = initialUserScripts {
@@ -60,6 +61,8 @@ public class FlutterWebViewController: NSObject, FlutterPlatformView, Disposable
                                    contextMenu: contextMenu,
                                    userScripts: userScripts)
         }
+
+        webView!.instanceId = instanceId
         
         let pullToRefreshSettings = PullToRefreshSettings()
         let _ = pullToRefreshSettings.parse(settings: pullToRefreshInitialSettings)

@@ -5,37 +5,46 @@
 Pod::Spec.new do |s|
   s.name             = 'flutter_inappwebview_ios'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin.'
+  s.summary          = 'iOS platform code for flutter_inappwebview.'
   s.description      = <<-DESC
-A new Flutter plugin.
+Native iOS implementation for the flutter_inappwebview plugin, including the
+OM SDK dependencies and privacy resources required at runtime.
                        DESC
-  s.homepage         = 'http://example.com'
-  s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
-  s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
-  s.resources = 'Storyboards/**/*.storyboard'
-  s.public_header_files = 'Classes/**/*.h'
-  s.dependency 'Flutter'
-  s.resource_bundles = {'flutter_inappwebview_ios_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
-
-  # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
-
-  s.libraries = 'swiftCoreGraphics'
-
-  s.xcconfig = {
-      'LIBRARY_SEARCH_PATHS' => '$(SDKROOT)/usr/lib/swift',
+  s.homepage         = 'https://github.com/pichillilorenzo/flutter_inappwebview'
+  s.license          = { :type => 'Apache-2.0', :file => '../LICENSE' }
+  s.author           = { 'Lorenzo Pichilli' => 'lorenzo@pichillilorenzo.com' }
+  s.source           = {
+  :git => 'https://github.com/pichillilorenzo/flutter_inappwebview.git',
+  :tag => s.version.to_s
   }
 
-  s.swift_version = '5.0'
-
-  s.platforms = { :ios => '12.0' }
-  s.dependency 'OrderedSet', '~>6.0.3'
-
+  s.swift_versions   = ['5.0']
+  s.ios.deployment_target = '12.0'
   s.default_subspec = 'Core'
-
   s.subspec 'Core' do |core|
-    core.platform = :ios, '12.0'
+      core.source_files = 'Classes/**/*'
+      core.resources = [
+        'Storyboards/**/*.storyboard',
+        'Frameworks/OMSDK/PrivacyInfo.xcprivacy'
+      ]
+      core.public_header_files = 'Classes/**/*.h'
+      core.resource_bundles = { 'flutter_inappwebview_ios_privacy' => ['Resources/PrivacyInfo.xcprivacy'] }
+      core.vendored_frameworks = 'Frameworks/OMSDK/OMSDK_Megabrainco.xcframework'
+      core.dependency 'Flutter'
+	  core.dependency 'OrderedSet', '~>6.0.3'
+	  core.libraries = 'swiftCoreGraphics'
+	  core.pod_target_xcconfig = {
+        'DEFINES_MODULE' => 'YES',
+        'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+        'OTHER_LDFLAGS' => '$(inherited) -framework "OMSDK_Megabrainco"',
+        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_TARGET_SRCROOT}/Frameworks/OMSDK'
+      }
+      core.user_target_xcconfig = {
+        'OTHER_LDFLAGS' => '$(inherited) -framework "OMSDK_Megabrainco"',
+        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/flutter_inappwebview_ios/Frameworks/OMSDK ${PODS_ROOT}/../.symlinks/plugins/flutter_inappwebview_ios/ios/Frameworks/OMSDK'
+      }
+      core.xcconfig = {
+        'LIBRARY_SEARCH_PATHS' => '$(SDKROOT)/usr/lib/swift'
+      }
   end
 end

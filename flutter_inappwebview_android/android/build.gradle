@@ -1,4 +1,4 @@
-group 'com.pichillilorenzo.flutter_inappwebview_android'
+group 'so.kontext.flutter_inappwebview_android_kontext'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -17,7 +17,7 @@ rootProject.allprojects {
         google()
         mavenCentral()
         flatDir {
-            def pluginProject = rootProject.findProject(':flutter_inappwebview_android')
+            def pluginProject = rootProject.findProject(':flutter_inappwebview_android_kontext')
             dirs pluginProject != null ? pluginProject.file('libs') : file('libs')
         }
     }
@@ -35,7 +35,7 @@ repositories {
 android {
     // Conditional for compatibility with AGP <4.2.
     if (project.android.hasProperty("namespace")) {
-        namespace 'com.pichillilorenzo.flutter_inappwebview_android'
+        namespace 'so.kontext.flutter_inappwebview_android_kontext'
     }
     compileSdk 34
 

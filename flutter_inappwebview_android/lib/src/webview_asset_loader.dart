@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 /// Object specifying creation parameters for creating a [AndroidPathHandler].
 ///
@@ -38,7 +38,7 @@ abstract mixin class AndroidPathHandler
   void _init(PlatformPathHandlerCreationParams params) {
     this.path = params.path;
     channel = MethodChannel(
-        'com.pichillilorenzo/flutter_inappwebview_custompathhandler_${_id}');
+        'so.kontext/flutter_inappwebview_kontext_custompathhandler_${_id}');
     handler = _handleMethod;
     initMethodCallHandler();
   }

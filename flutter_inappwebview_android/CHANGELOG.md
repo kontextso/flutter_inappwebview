@@ -1,3 +1,10 @@
+## 1.1.3+1.kontext.0
+
+- Renamed package to `flutter_inappwebview_android_kontext` with unique Android
+  namespaces, plugin identifiers, and MethodChannel prefixes.
+- Migrated the Android source namespace to `so.kontext.flutter_inappwebview_android_kontext` for coexistence safety.
+- Pointed to `flutter_inappwebview_platform_interface_kontext`.
+
 ## 1.1.3
 
 - Updated flutter_inappwebview_platform_interface version to ^1.3.0

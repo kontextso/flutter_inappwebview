@@ -8,7 +8,7 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 import '../web_message/main.dart';
 
@@ -98,7 +98,7 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
             ? params
             : AndroidInAppWebViewControllerCreationParams
                 .fromPlatformInAppWebViewControllerCreationParams(params)) {
-    channel = MethodChannel('com.pichillilorenzo/flutter_inappwebview_$id');
+    channel = MethodChannel('so.kontext/flutter_inappwebview_kontext_$id');
     handler = handleMethod;
     initMethodCallHandler();
 

@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 /// Object specifying creation parameters for creating a [AndroidPrintJobController].
 ///
@@ -36,7 +36,7 @@ class AndroidPrintJobController extends PlatformPrintJobController
                   .fromPlatformPrintJobControllerCreationParams(params),
         ) {
     channel = MethodChannel(
-        'com.pichillilorenzo/flutter_inappwebview_printjobcontroller_${params.id}');
+        'so.kontext/flutter_inappwebview_kontext_printjobcontroller_${params.id}');
     handler = _handleMethod;
     initMethodCallHandler();
   }

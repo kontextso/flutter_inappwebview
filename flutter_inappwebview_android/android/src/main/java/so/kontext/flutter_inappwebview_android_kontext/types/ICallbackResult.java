@@ -1,0 +1,13 @@
+package so.kontext.flutter_inappwebview_android_kontext.types;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import io.flutter.plugin.common.MethodChannel;
+
+public interface ICallbackResult<T> extends MethodChannel.Result {
+  boolean nonNullSuccess(@NonNull T result);
+  boolean nullSuccess();
+  void defaultBehaviour(@Nullable T result);
+  @Nullable T decodeResult(@Nullable Object obj);
+}

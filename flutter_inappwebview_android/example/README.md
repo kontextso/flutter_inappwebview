@@ -1,6 +1,6 @@
-# flutter_inappwebview_android_example
+# flutter_inappwebview_android_kontext_example
 
-Demonstrates how to use the flutter_inappwebview_android plugin.
+Demonstrates how to use the flutter_inappwebview_android_kontext plugin.
 
 ## Getting Started
 

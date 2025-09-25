@@ -3,7 +3,7 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 import '../find_interaction/find_interaction_controller.dart';
 import '../in_app_webview/in_app_webview_controller.dart';
@@ -74,7 +74,7 @@ class AndroidInAppBrowser extends PlatformInAppBrowser with ChannelController {
       params as AndroidInAppBrowserCreationParams;
 
   static const MethodChannel _staticChannel =
-      const MethodChannel('com.pichillilorenzo/flutter_inappbrowser');
+      const MethodChannel('so.kontext/flutter_inappbrowser_kontext');
 
   ContextMenu? _contextMenu;
 
@@ -91,7 +91,7 @@ class AndroidInAppBrowser extends PlatformInAppBrowser with ChannelController {
   }
 
   _init() {
-    channel = MethodChannel('com.pichillilorenzo/flutter_inappbrowser_$id');
+    channel = MethodChannel('so.kontext/flutter_inappbrowser_kontext_$id');
     handler = _handleMethod;
     initMethodCallHandler();
 

@@ -1,4 +1,4 @@
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 import 'chrome_safari_browser/chrome_safari_browser.dart';
 import 'cookie_manager.dart';

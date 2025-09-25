@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 import 'headless_in_app_webview.dart';
 
 import '../find_interaction/find_interaction_controller.dart';
@@ -318,7 +318,7 @@ class AndroidInAppWebViewWidget extends PlatformInAppWebViewWidget {
 
     return PlatformViewLink(
       key: params.key,
-      viewType: 'com.pichillilorenzo/flutter_inappwebview',
+      viewType: 'so.kontext/flutter_inappwebview_kontext',
       surfaceFactory: (
         BuildContext context,
         PlatformViewController controller,
@@ -334,7 +334,7 @@ class AndroidInAppWebViewWidget extends PlatformInAppWebViewWidget {
         return _createAndroidViewController(
           hybridComposition: useHybridComposition,
           id: params.id,
-          viewType: 'com.pichillilorenzo/flutter_inappwebview',
+          viewType: 'so.kontext/flutter_inappwebview_kontext',
           layoutDirection: this.params.layoutDirection ??
               Directionality.maybeOf(context) ??
               TextDirection.rtl,

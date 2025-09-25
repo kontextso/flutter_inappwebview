@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 import '../find_interaction/find_interaction_controller.dart';
 import '../pull_to_refresh/pull_to_refresh_controller.dart';
 import 'in_app_webview_controller.dart';
@@ -259,7 +259,7 @@ class AndroidHeadlessInAppWebView extends PlatformHeadlessInAppWebView
   bool _running = false;
 
   static const MethodChannel _sharedChannel =
-      const MethodChannel('com.pichillilorenzo/flutter_headless_inappwebview');
+      const MethodChannel('so.kontext/flutter_headless_inappwebview_kontext');
 
   AndroidInAppWebViewController? _webViewController;
 
@@ -293,7 +293,7 @@ class AndroidHeadlessInAppWebView extends PlatformHeadlessInAppWebView
     _androidParams.pullToRefreshController?.init(id);
     _androidParams.findInteractionController?.init(id);
     channel =
-        MethodChannel('com.pichillilorenzo/flutter_headless_inappwebview_$id');
+        MethodChannel('so.kontext/flutter_headless_inappwebview_kontext_$id');
     handler = _handleMethod;
     initMethodCallHandler();
   }

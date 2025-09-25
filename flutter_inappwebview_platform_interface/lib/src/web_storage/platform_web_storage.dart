@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview_platform_interface/src/types/disposable.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/src/types/disposable.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import '../in_app_webview/platform_inappwebview_controller.dart';

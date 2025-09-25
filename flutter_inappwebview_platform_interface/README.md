@@ -1,10 +1,7 @@
-# flutter\_inappwebview\_platform\_interface
+# flutter_inappwebview_platform_interface_kontext
 
-A common platform interface for the [`flutter_inappwebview`](https://pub.dev/packages/flutter_inappwebview) plugin.
-
-This interface allows platform-specific implementations of the `flutter_inappwebview`
-plugin, as well as the plugin itself, to ensure they are supporting the
-same interface.
+A Kontext-maintained fork of the [`flutter_inappwebview_platform_interface`](https://pub.dev/packages/flutter_inappwebview_platform_interface)
+package that preserves the same APIs under a new, non-conflicting import path.
 
 # Usage
 
@@ -13,6 +10,12 @@ To implement a new platform-specific implementation of `flutter_inappwebview`, e
 platform-specific behavior, and when you register your plugin, set the default
 `InAppWebViewPlatform` by calling
 `InAppWebViewPlatform.instance = MyPlatformWebview()`.
+
+Import this package with:
+
+```dart
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface.dart';
+```
 
 # Note on breaking changes
 

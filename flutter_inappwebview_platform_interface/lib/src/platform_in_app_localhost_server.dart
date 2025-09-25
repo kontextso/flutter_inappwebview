@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [PlatformInAppLocalhostServer].

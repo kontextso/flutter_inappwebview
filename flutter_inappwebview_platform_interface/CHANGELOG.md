@@ -1,3 +1,8 @@
+## 1.3.0+1.kontext.0
+
+- Renamed package to `flutter_inappwebview_platform_interface_kontext` with an updated library name and import path.
+- Updated metadata and documentation to reflect Kontext maintenance.
+
 ## 1.3.0+1
 
 - Fixed `X509Certificate.toMap` method

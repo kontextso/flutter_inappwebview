@@ -2438,12 +2438,6 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setSafeBrowsingWhitelist is not implemented on the current platform');
   }
 
-  /// Get native webview instance by instanceId.
-  Future<dynamic> getNativeWebViewByInstanceId(String instanceId) {
-    throw UnimplementedError(
-        'getNativeWebViewByInstanceId is not implemented on the current platform');
-  }
-
   /// Returns all registered webview instance ids.
   Future<List<String>> getAllRegisteredInstanceIds() {
     throw UnimplementedError(

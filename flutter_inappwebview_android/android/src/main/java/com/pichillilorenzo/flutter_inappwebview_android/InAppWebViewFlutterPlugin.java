@@ -13,6 +13,7 @@ import com.pichillilorenzo.flutter_inappwebview_android.credential_database.Cred
 import com.pichillilorenzo.flutter_inappwebview_android.headless_in_app_webview.HeadlessInAppWebViewManager;
 import com.pichillilorenzo.flutter_inappwebview_android.in_app_browser.InAppBrowserManager;
 import com.pichillilorenzo.flutter_inappwebview_android.print_job.PrintJobManager;
+import com.pichillilorenzo.flutter_inappwebview_android.omid.OmidSessionManager;
 import com.pichillilorenzo.flutter_inappwebview_android.process_global_config.ProcessGlobalConfigManager;
 import com.pichillilorenzo.flutter_inappwebview_android.proxy.ProxyManager;
 import com.pichillilorenzo.flutter_inappwebview_android.service_worker.ServiceWorkerManager;
@@ -57,6 +58,8 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
   public ProxyManager proxyManager;
   @Nullable
   public PrintJobManager printJobManager;
+  @Nullable
+  public OmidSessionManager omidSessionManager;
   @Nullable
   public TracingControllerManager tracingControllerManager;
   @Nullable
@@ -114,6 +117,7 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
       printJobManager = new PrintJobManager(this);
     }
+    omidSessionManager = new OmidSessionManager(this);
     tracingControllerManager = new TracingControllerManager(this);
     processGlobalConfigManager = new ProcessGlobalConfigManager(this);
   }
@@ -171,6 +175,10 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
     if (printJobManager != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
       printJobManager.dispose();
       printJobManager = null;
+    }
+    if (omidSessionManager != null) {
+      omidSessionManager.dispose();
+      omidSessionManager = null;
     }
     if (tracingControllerManager != null) {
       tracingControllerManager.dispose();

@@ -35,7 +35,8 @@ public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
     var chromeSafariBrowserManager: ChromeSafariBrowserManager?
     var webAuthenticationSessionManager: WebAuthenticationSessionManager?
     var printJobManager: PrintJobManager?
-    
+    @available(iOS 11.0, *)
+    var omidSessionManager: OmidSessionManager?
     var webViewControllers: [String: InAppBrowserWebViewController?] = [:]
     var safariViewControllers: [String: Any?] = [:]
     
@@ -59,6 +60,9 @@ public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
         }
         webAuthenticationSessionManager = WebAuthenticationSessionManager(plugin: self)
         printJobManager = PrintJobManager(plugin: self)
+        if #available(iOS 11.0, *) {
+            omidSessionManager = OmidSessionManager(plugin: self)
+        }
     }
     
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -90,5 +94,10 @@ public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
         webAuthenticationSessionManager = nil
         printJobManager?.dispose()
         printJobManager = nil
+        if #available(iOS 11.0, *) {
+            omidSessionManager?.disposeSessions()
+            omidSessionManager?.dispose()
+            omidSessionManager = nil
+        }
     }
 }

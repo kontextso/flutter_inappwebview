@@ -2726,11 +2726,6 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
   }
 
   @override
-  Future<dynamic> getNativeWebViewByInstanceId(String instanceId) async {
-    return await _staticChannel.invokeMethod('getNativeWebViewByInstanceId', {'instanceId': instanceId});
-  }
-
-  @override
   Future<List<String>> getAllRegisteredInstanceIds() async {
     final result = await _staticChannel.invokeMethod<List<dynamic>>('getAllRegisteredInstanceIds');
     return result?.whereType<String>().toList() ?? [];

@@ -576,10 +576,6 @@ class InAppWebViewController {
   ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getViewId}
   dynamic getViewId() => platform.getViewId();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getNativeWebViewByInstanceId}
-  static Future<dynamic> getNativeWebViewByInstanceId(String instanceId) =>
-      PlatformInAppWebViewController.static().getNativeWebViewByInstanceId(instanceId);
-
   ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getAllRegisteredInstanceIds}
   static Future<List<String>> getAllRegisteredInstanceIds() =>
       PlatformInAppWebViewController.static().getAllRegisteredInstanceIds();

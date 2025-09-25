@@ -165,24 +165,6 @@ public class InAppWebViewManager extends ChannelDelegateImpl {
         }
         result.success(true);
         break;
-      case "getNativeWebViewByInstanceId":
-      {
-        String instanceId = (String) call.argument("instanceId");
-        if (instanceId == null) {
-          result.success(null);
-          break;
-        }
-        InAppWebView nativeWebView = WebViewInstanceRegistry.get(instanceId);
-        if (nativeWebView != null) {
-          HashMap<String, Object> webViewInfo = new HashMap<>();
-          webViewInfo.put("instanceId", instanceId);
-          webViewInfo.put("hashCode", System.identityHashCode(nativeWebView));
-          result.success(webViewInfo);
-        } else {
-          result.success(null);
-        }
-      }
-      break;
       case "getAllRegisteredInstanceIds":
         result.success(new ArrayList<>(WebViewInstanceRegistry.getRegisteredInstanceIds()));
         break;
@@ -191,7 +173,7 @@ public class InAppWebViewManager extends ChannelDelegateImpl {
         String instanceId = (String) call.argument("instanceId");
         result.success(instanceId != null && WebViewInstanceRegistry.isRegistered(instanceId));
       }
-      break;
+        break;
       default:
         result.notImplemented();
     }

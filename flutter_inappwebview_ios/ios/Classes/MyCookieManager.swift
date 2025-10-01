@@ -10,12 +10,12 @@ import WebKit
 
 @available(iOS 11.0, *)
 public class MyCookieManager: ChannelDelegate {
-    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_cookiemanager"
+    static let METHOD_CHANNEL_NAME = "so.kontext/flutter_inappwebview_ios_kontext_cookiemanager"
     static let httpCookieStore = WKWebsiteDataStore.default().httpCookieStore
 
-    private var plugin: SwiftFlutterPlugin?
+    private var plugin: SwiftFlutterKontextPlugin?
     
-    init(plugin: SwiftFlutterPlugin) {
+    init(plugin: SwiftFlutterKontextPlugin) {
         super.init(channel: FlutterMethodChannel(name: MyCookieManager.METHOD_CHANNEL_NAME, binaryMessenger: plugin.registrar!.messenger()))
         self.plugin = plugin
     }

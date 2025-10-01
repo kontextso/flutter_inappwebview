@@ -10,9 +10,9 @@ import AuthenticationServices
 import SafariServices
 
 public class WebAuthenticationSession: NSObject, ASWebAuthenticationPresentationContextProviding, Disposable {
-    static let METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_webauthenticationsession_"
+    static let METHOD_CHANNEL_NAME_PREFIX = "so.kontext/flutter_inappwebview_ios_kontext_webauthenticationsession_"
     var id: String
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     var url: URL
     var callbackURLScheme: String?
     var settings: WebAuthenticationSessionSettings
@@ -20,7 +20,7 @@ public class WebAuthenticationSession: NSObject, ASWebAuthenticationPresentation
     var channelDelegate: WebAuthenticationSessionChannelDelegate?
     private var _canStart = true
     
-    public init(plugin: SwiftFlutterPlugin, id: String, url: URL, callbackURLScheme: String?, settings: WebAuthenticationSessionSettings) {
+    public init(plugin: SwiftFlutterKontextPlugin, id: String, url: URL, callbackURLScheme: String?, settings: WebAuthenticationSessionSettings) {
         self.id = id
         self.plugin = plugin
         self.url = url

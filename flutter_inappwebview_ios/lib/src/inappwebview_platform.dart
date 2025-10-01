@@ -1,4 +1,4 @@
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 import 'chrome_safari_browser/chrome_safari_browser.dart';
 import 'cookie_manager.dart';
@@ -22,7 +22,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSCookieManager].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [CookieManager] in `flutter_inappwebview` instead.
+  /// Look at using [CookieManager] in `flutter_inappwebview_kontext` instead.
   @override
   IOSCookieManager createPlatformCookieManager(
     PlatformCookieManagerCreationParams params,
@@ -33,7 +33,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSInAppWebViewController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppWebViewController] in `flutter_inappwebview` instead.
+  /// Look at using [InAppWebViewController] in `flutter_inappwebview_kontext` instead.
   @override
   IOSInAppWebViewController createPlatformInAppWebViewController(
     PlatformInAppWebViewControllerCreationParams params,
@@ -44,7 +44,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [IOSInAppWebViewController] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppWebViewController] in `flutter_inappwebview` instead.
+  /// Look at using [InAppWebViewController] in `flutter_inappwebview_kontext` instead.
   @override
   IOSInAppWebViewController createPlatformInAppWebViewControllerStatic() {
     return IOSInAppWebViewController.static();
@@ -53,7 +53,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSInAppWebViewWidget].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppWebView] in `flutter_inappwebview` instead.
+  /// Look at using [InAppWebView] in `flutter_inappwebview_kontext` instead.
   @override
   IOSInAppWebViewWidget createPlatformInAppWebViewWidget(
     PlatformInAppWebViewWidgetCreationParams params,
@@ -64,7 +64,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSFindInteractionController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [FindInteractionController] in `flutter_inappwebview` instead.
+  /// Look at using [FindInteractionController] in `flutter_inappwebview_kontext` instead.
   @override
   IOSFindInteractionController createPlatformFindInteractionController(
     PlatformFindInteractionControllerCreationParams params,
@@ -75,7 +75,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSPrintJobController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [PrintJobController] in `flutter_inappwebview` instead.
+  /// Look at using [PrintJobController] in `flutter_inappwebview_kontext` instead.
   @override
   IOSPrintJobController createPlatformPrintJobController(
     PlatformPrintJobControllerCreationParams params,
@@ -86,7 +86,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSPullToRefreshController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [PullToRefreshController] in `flutter_inappwebview` instead.
+  /// Look at using [PullToRefreshController] in `flutter_inappwebview_kontext` instead.
   @override
   IOSPullToRefreshController createPlatformPullToRefreshController(
     PlatformPullToRefreshControllerCreationParams params,
@@ -97,7 +97,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSWebMessageChannel].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessageChannel] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessageChannel] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebMessageChannel createPlatformWebMessageChannel(
     PlatformWebMessageChannelCreationParams params,
@@ -108,7 +108,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [IOSWebMessageChannel] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessageChannel] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessageChannel] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebMessageChannel createPlatformWebMessageChannelStatic() {
     return IOSWebMessageChannel.static();
@@ -117,7 +117,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSWebMessageListener].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessageListener] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessageListener] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebMessageListener createPlatformWebMessageListener(
     PlatformWebMessageListenerCreationParams params,
@@ -128,7 +128,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSJavaScriptReplyProxy].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [JavaScriptReplyProxy] in `flutter_inappwebview` instead.
+  /// Look at using [JavaScriptReplyProxy] in `flutter_inappwebview_kontext` instead.
   @override
   IOSJavaScriptReplyProxy createPlatformJavaScriptReplyProxy(
     PlatformJavaScriptReplyProxyCreationParams params,
@@ -139,7 +139,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSWebMessagePort].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessagePort] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessagePort] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebMessagePort createPlatformWebMessagePort(
     PlatformWebMessagePortCreationParams params,
@@ -150,7 +150,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSWebStorage].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebStorage] in `flutter_inappwebview` instead.
+  /// Look at using [WebStorage] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebStorage createPlatformWebStorage(
     PlatformWebStorageCreationParams params,
@@ -161,7 +161,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSLocalStorage].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [LocalStorage] in `flutter_inappwebview` instead.
+  /// Look at using [LocalStorage] in `flutter_inappwebview_kontext` instead.
   @override
   IOSLocalStorage createPlatformLocalStorage(
     PlatformLocalStorageCreationParams params,
@@ -172,7 +172,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSSessionStorage].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [SessionStorage] in `flutter_inappwebview` instead.
+  /// Look at using [SessionStorage] in `flutter_inappwebview_kontext` instead.
   @override
   IOSSessionStorage createPlatformSessionStorage(
     PlatformSessionStorageCreationParams params,
@@ -183,7 +183,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSHeadlessInAppWebView].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [HeadlessInAppWebView] in `flutter_inappwebview` instead.
+  /// Look at using [HeadlessInAppWebView] in `flutter_inappwebview_kontext` instead.
   @override
   IOSHeadlessInAppWebView createPlatformHeadlessInAppWebView(
     PlatformHeadlessInAppWebViewCreationParams params,
@@ -194,7 +194,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSHttpAuthCredentialDatabase].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [HttpAuthCredentialDatabase] in `flutter_inappwebview` instead.
+  /// Look at using [HttpAuthCredentialDatabase] in `flutter_inappwebview_kontext` instead.
   @override
   IOSHttpAuthCredentialDatabase createPlatformHttpAuthCredentialDatabase(
     PlatformHttpAuthCredentialDatabaseCreationParams params,
@@ -205,7 +205,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSInAppBrowser].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [InAppBrowser] in `flutter_inappwebview_kontext` instead.
   @override
   IOSInAppBrowser createPlatformInAppBrowser(
     PlatformInAppBrowserCreationParams params,
@@ -216,7 +216,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [IOSInAppBrowser] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [InAppBrowser] in `flutter_inappwebview_kontext` instead.
   @override
   IOSInAppBrowser createPlatformInAppBrowserStatic() {
     return IOSInAppBrowser.static();
@@ -225,7 +225,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSChromeSafariBrowser].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ChromeSafariBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [ChromeSafariBrowser] in `flutter_inappwebview_kontext` instead.
   @override
   IOSChromeSafariBrowser createPlatformChromeSafariBrowser(
     PlatformChromeSafariBrowserCreationParams params,
@@ -236,7 +236,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [IOSChromeSafariBrowser] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ChromeSafariBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [ChromeSafariBrowser] in `flutter_inappwebview_kontext` instead.
   @override
   IOSChromeSafariBrowser createPlatformChromeSafariBrowserStatic() {
     return IOSChromeSafariBrowser.static();
@@ -245,7 +245,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [IOSWebStorageManager] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebStorageManager] in `flutter_inappwebview` instead.
+  /// Look at using [WebStorageManager] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebStorageManager createPlatformWebStorageManager(
       PlatformWebStorageManagerCreationParams params) {
@@ -255,7 +255,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [IOSWebAuthenticationSession].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebAuthenticationSession] in `flutter_inappwebview` instead.
+  /// Look at using [WebAuthenticationSession] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebAuthenticationSession createPlatformWebAuthenticationSession(
       PlatformWebAuthenticationSessionCreationParams params) {
@@ -265,7 +265,7 @@ class IOSInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [IOSWebAuthenticationSession] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebAuthenticationSession] in `flutter_inappwebview` instead.
+  /// Look at using [WebAuthenticationSession] in `flutter_inappwebview_kontext` instead.
   @override
   IOSWebAuthenticationSession createPlatformWebAuthenticationSessionStatic() {
     return IOSWebAuthenticationSession.static();

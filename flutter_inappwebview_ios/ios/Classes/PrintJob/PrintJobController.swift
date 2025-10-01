@@ -16,9 +16,9 @@ public enum PrintJobState: Int {
 }
 
 public class PrintJobController: NSObject, Disposable, UIPrintInteractionControllerDelegate {
-    static let METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_printjobcontroller_"
+    static let METHOD_CHANNEL_NAME_PREFIX = "so.kontext/flutter_inappwebview_ios_kontext_printjobcontroller_"
     var id: String
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     var job: UIPrintInteractionController?
     var settings: PrintJobSettings?
     var printFormatter: UIPrintFormatter?
@@ -27,7 +27,7 @@ public class PrintJobController: NSObject, Disposable, UIPrintInteractionControl
     var state = PrintJobState.created
     var creationTime = Int64(Date().timeIntervalSince1970 * 1000)
     
-    public init(plugin: SwiftFlutterPlugin, id: String, job: UIPrintInteractionController? = nil, settings: PrintJobSettings? = nil) {
+    public init(plugin: SwiftFlutterKontextPlugin, id: String, job: UIPrintInteractionController? = nil, settings: PrintJobSettings? = nil) {
         self.id = id
         self.plugin = plugin
         super.init()

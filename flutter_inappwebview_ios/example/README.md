@@ -1,6 +1,6 @@
-# flutter_inappwebview_ios_example
+# flutter_inappwebview_ios_kontext_example
 
-Demonstrates how to use the flutter_inappwebview_ios plugin.
+Demonstrates how to use the flutter_inappwebview_ios_kontext plugin.
 
 ## Getting Started
 

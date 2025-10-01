@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 /// Object specifying creation parameters for creating a [IOSFindInteractionController].
 ///
@@ -141,7 +141,7 @@ class IOSFindInteractionController extends PlatformFindInteractionController
 extension InternalFindInteractionController on IOSFindInteractionController {
   void init(dynamic id) {
     channel = MethodChannel(
-        'com.pichillilorenzo/flutter_inappwebview_find_interaction_$id');
+        'so.kontext/flutter_inappwebview_ios_kontext_find_interaction_$id');
     handler = _handleMethod;
     initMethodCallHandler();
   }

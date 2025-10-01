@@ -8,12 +8,12 @@
 import Foundation
 
 public class CredentialDatabase: ChannelDelegate {
-    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_credential_database"
+    static let METHOD_CHANNEL_NAME = "so.kontext/flutter_inappwebview_ios_kontext_credential_database"
     static let credentialStore = URLCredentialStorage.shared
 
-    private var plugin: SwiftFlutterPlugin?
+    private var plugin: SwiftFlutterKontextPlugin?
 
-    init(plugin: SwiftFlutterPlugin) {
+    init(plugin: SwiftFlutterKontextPlugin) {
         super.init(channel: FlutterMethodChannel(name: CredentialDatabase.METHOD_CHANNEL_NAME, binaryMessenger: plugin.registrar!.messenger()))
         self.plugin = plugin
     }

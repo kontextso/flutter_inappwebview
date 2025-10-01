@@ -8,10 +8,10 @@
 import Foundation
 
 public class PlatformUtil: ChannelDelegate {
-    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_platformutil"
-    var plugin: SwiftFlutterPlugin?
+    static let METHOD_CHANNEL_NAME = "so.kontext/flutter_inappwebview_ios_kontext_platformutil"
+    var plugin: SwiftFlutterKontextPlugin?
     
-    init(plugin: SwiftFlutterPlugin) {
+    init(plugin: SwiftFlutterKontextPlugin) {
         super.init(channel: FlutterMethodChannel(name: PlatformUtil.METHOD_CHANNEL_NAME, binaryMessenger: plugin.registrar!.messenger()))
         self.plugin = plugin
     }

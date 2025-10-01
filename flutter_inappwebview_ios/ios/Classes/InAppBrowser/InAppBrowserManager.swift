@@ -12,15 +12,15 @@ import Foundation
 import AVFoundation
 
 public class InAppBrowserManager: ChannelDelegate {
-    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappbrowser"
+    static let METHOD_CHANNEL_NAME = "so.kontext/flutter_inappwebview_ios_kontext_inappbrowser"
     static let WEBVIEW_STORYBOARD = "WebView"
     static let WEBVIEW_STORYBOARD_CONTROLLER_ID = "viewController"
     static let NAV_STORYBOARD_CONTROLLER_ID = "navController"
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     
     private var previousStatusBarStyle = -1
     
-    init(plugin: SwiftFlutterPlugin) {
+    init(plugin: SwiftFlutterKontextPlugin) {
         super.init(channel: FlutterMethodChannel(name: InAppBrowserManager.METHOD_CHANNEL_NAME, binaryMessenger: plugin.registrar!.messenger()))
         self.plugin = plugin
     }
@@ -99,7 +99,7 @@ public class InAppBrowserManager: ChannelDelegate {
     }
     
     public func presentViewController(webViewController: InAppBrowserWebViewController) {
-        let storyboard = UIStoryboard(name: InAppBrowserManager.WEBVIEW_STORYBOARD, bundle: Bundle(for: InAppWebViewFlutterPlugin.self))
+        let storyboard = UIStoryboard(name: InAppBrowserManager.WEBVIEW_STORYBOARD, bundle: Bundle(for: InAppWebViewFlutterKontextPlugin.self))
         let navController = storyboard.instantiateViewController(withIdentifier: InAppBrowserManager.NAV_STORYBOARD_CONTROLLER_ID) as! InAppBrowserNavigationController
         webViewController.edgesForExtendedLayout = []
         navController.pushViewController(webViewController, animated: false)

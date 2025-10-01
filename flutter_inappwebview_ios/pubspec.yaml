@@ -1,9 +1,9 @@
-name: flutter_inappwebview_ios
-description: iOS implementation of the flutter_inappwebview plugin.
-version: 1.1.2
-homepage: https://inappwebview.dev/
-repository: https://github.com/pichillilorenzo/flutter_inappwebview/tree/master/flutter_inappwebview_ios
-issue_tracker: https://github.com/pichillilorenzo/flutter_inappwebview/issues
+name: flutter_inappwebview_ios_kontext
+description: Kontext-maintained iOS implementation of the flutter_inappwebview plugin.
+version: 1.1.2+1.kontext.0
+homepage: https://github.com/kontextso/flutter_inappwebview/tree/kontext-develop/flutter_inappwebview_ios
+repository: https://github.com/kontextso/flutter_inappwebview/tree/kontext-develop/flutter_inappwebview_ios
+issue_tracker: https://github.com/kontextso/flutter_inappwebview/issues
 funding:
   - https://inappwebview.dev/donate/
 topics:
@@ -20,9 +20,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-#  flutter_inappwebview_platform_interface: ^1.3.0
-  flutter_inappwebview_platform_interface:
+  flutter_inappwebview_platform_interface_kontext:
     path: ../flutter_inappwebview_platform_interface/
+#  flutter_inappwebview_platform_interface_kontext: ^1.3.0+1.kontext.0
 
 dev_dependencies:
   flutter_test:
@@ -46,10 +46,10 @@ flutter:
   # All these are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
   plugin:
-    implements: flutter_inappwebview
+    implements: flutter_inappwebview_kontext
     platforms:
       ios:
-        pluginClass: InAppWebViewFlutterPlugin
+        pluginClass: InAppWebViewFlutterKontextPlugin
         dartPluginClass: IOSInAppWebViewPlatform
 
   # To add assets to your plugin package, add an assets section, like this:

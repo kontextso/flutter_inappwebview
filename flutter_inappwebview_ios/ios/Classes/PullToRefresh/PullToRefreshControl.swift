@@ -9,15 +9,15 @@ import Foundation
 import Flutter
 
 public class PullToRefreshControl: UIRefreshControl, Disposable {
-    static let METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_pull_to_refresh_"
+    static let METHOD_CHANNEL_NAME_PREFIX = "so.kontext/flutter_inappwebview_ios_kontext_pull_to_refresh_"
 
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     var channelDelegate: PullToRefreshChannelDelegate?
     var settings: PullToRefreshSettings?
     var shouldCallOnRefresh = false
     var delegate: PullToRefreshDelegate?
     
-    public init(plugin: SwiftFlutterPlugin, id: Any, settings: PullToRefreshSettings?) {
+    public init(plugin: SwiftFlutterKontextPlugin, id: Any, settings: PullToRefreshSettings?) {
         super.init()
         self.plugin = plugin
         self.settings = settings

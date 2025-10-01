@@ -11,7 +11,7 @@ import WebKit
 import Foundation
 
 public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelegate, UIScrollViewDelegate, UISearchBarDelegate, Disposable {
-    static let METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappbrowser_"
+    static let METHOD_CHANNEL_NAME_PREFIX = "so.kontext/flutter_inappwebview_ios_kontext_inappbrowser_"
     
     var closeButton: UIBarButtonItem!
     var reloadButton: UIBarButtonItem!
@@ -34,7 +34,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
     
     var tmpWindow: UIWindow?
     var id: String = ""
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     var windowId: Int64?
     var webView: InAppWebView?
     var channelDelegate: InAppBrowserChannelDelegate?

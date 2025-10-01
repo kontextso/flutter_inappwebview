@@ -9,12 +9,12 @@ import Foundation
 import Flutter
 
 public class FindInteractionController: NSObject, Disposable {
-    static let METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_find_interaction_"
+    static let METHOD_CHANNEL_NAME_PREFIX = "so.kontext/flutter_inappwebview_ios_kontext_find_interaction_"
 
     var webView: InAppWebView?
     var channelDelegate: FindInteractionChannelDelegate?
 
-    private var plugin: SwiftFlutterPlugin?
+    private var plugin: SwiftFlutterKontextPlugin?
     private var settings: FindInteractionSettings?
     
     private var _searchText: String? = nil
@@ -49,7 +49,7 @@ public class FindInteractionController: NSObject, Disposable {
         }
     }
     
-    public init(plugin: SwiftFlutterPlugin, id: Any, webView: InAppWebView, settings: FindInteractionSettings?) {
+    public init(plugin: SwiftFlutterKontextPlugin, id: Any, webView: InAppWebView, settings: FindInteractionSettings?) {
         super.init()
         self.plugin = plugin
         self.webView = webView

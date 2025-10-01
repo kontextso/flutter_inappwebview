@@ -1,3 +1,8 @@
+## 1.1.2+1.kontext.0
+
+- Rename the package to `flutter_inappwebview_ios_kontext` and update platform
+  identifiers to avoid collisions with the upstream release.
+
 ## 1.1.2
 
 - Updated flutter_inappwebview_platform_interface version to ^1.3.0

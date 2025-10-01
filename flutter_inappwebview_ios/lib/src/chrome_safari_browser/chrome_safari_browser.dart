@@ -3,7 +3,7 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 /// Object specifying creation parameters for creating a [IOSChromeSafariBrowser].
 ///
@@ -51,11 +51,11 @@ class IOSChromeSafariBrowser extends PlatformChromeSafariBrowser
   Map<int, ChromeSafariBrowserMenuItem> _menuItems = new HashMap();
   bool _isOpened = false;
   static const MethodChannel _staticChannel =
-      const MethodChannel('com.pichillilorenzo/flutter_chromesafaribrowser');
+      const MethodChannel('so.kontext/flutter_inappwebview_ios_kontext_chromesafaribrowser');
 
   _init() {
     channel =
-        MethodChannel('com.pichillilorenzo/flutter_chromesafaribrowser_$id');
+        MethodChannel('so.kontext/flutter_inappwebview_ios_kontext_chromesafaribrowser_$id');
     handler = _handleMethod;
     initMethodCallHandler();
   }

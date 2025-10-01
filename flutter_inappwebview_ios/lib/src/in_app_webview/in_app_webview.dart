@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 import 'headless_in_app_webview.dart';
 
 import '../find_interaction/find_interaction_controller.dart';
@@ -309,7 +309,7 @@ class IOSInAppWebViewWidget extends PlatformInAppWebViewWidget {
     }
 
     return UiKitView(
-      viewType: 'com.pichillilorenzo/flutter_inappwebview',
+      viewType: 'so.kontext/flutter_inappwebview_ios_kontext',
       onPlatformViewCreated: _onPlatformViewCreated,
       gestureRecognizers: params.gestureRecognizers,
       creationParams: <String, dynamic>{

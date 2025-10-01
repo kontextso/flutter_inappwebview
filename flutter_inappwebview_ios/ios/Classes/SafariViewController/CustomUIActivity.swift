@@ -8,7 +8,7 @@
 import Foundation
 
 class CustomUIActivity: UIActivity {
-    var plugin: SwiftFlutterPlugin
+    var plugin: SwiftFlutterKontextPlugin
     var viewId: String
     var id: Int64
     var url: URL
@@ -17,7 +17,7 @@ class CustomUIActivity: UIActivity {
     var label: String?
     var image: UIImage?
     
-    init(plugin: SwiftFlutterPlugin, viewId: String, id: Int64, url: URL, title: String?, label: String?, type: UIActivity.ActivityType?, image: UIImage?) {
+    init(plugin: SwiftFlutterKontextPlugin, viewId: String, id: Int64, url: URL, title: String?, label: String?, type: UIActivity.ActivityType?, image: UIImage?) {
         self.plugin = plugin
         self.viewId = viewId
         self.id = id

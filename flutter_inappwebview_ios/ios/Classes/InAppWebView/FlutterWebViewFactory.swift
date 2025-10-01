@@ -9,11 +9,11 @@ import Flutter
 import Foundation
 
 public class FlutterWebViewFactory: NSObject, FlutterPlatformViewFactory {
-    static let VIEW_TYPE_ID = "com.pichillilorenzo/flutter_inappwebview"
+    static let VIEW_TYPE_ID = "so.kontext/flutter_inappwebview_ios_kontext"
     
-    private var plugin: SwiftFlutterPlugin
+    private var plugin: SwiftFlutterKontextPlugin
     
-    init(plugin: SwiftFlutterPlugin) {
+    init(plugin: SwiftFlutterKontextPlugin) {
         self.plugin = plugin
         super.init()
     }

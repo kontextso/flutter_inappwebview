@@ -15,18 +15,18 @@
  under the License.
  */
 
-#import "InAppWebViewFlutterPlugin.h"
-#if __has_include(<flutter_inappwebview_ios/flutter_inappwebview_ios-Swift.h>)
-#import <flutter_inappwebview_ios/flutter_inappwebview_ios-Swift.h>
+#import "InAppWebViewFlutterKontextPlugin.h"
+#if __has_include(<flutter_inappwebview_ios_kontext/flutter_inappwebview_ios_kontext-Swift.h>)
+#import <flutter_inappwebview_ios_kontext/flutter_inappwebview_ios_kontext-Swift.h>
 #else
 // Support project import fallback if the generated compatibility header
 // is not copied when this plugin is created as a library.
 // https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
-#import "flutter_inappwebview_ios-Swift.h"
+#import "flutter_inappwebview_ios_kontext-Swift.h"
 #endif
 
-@implementation InAppWebViewFlutterPlugin : NSObject
+@implementation InAppWebViewFlutterKontextPlugin : NSObject
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-    [SwiftFlutterPlugin registerWithRegistrar:registrar];
+    [SwiftFlutterKontextPlugin registerWithRegistrar:registrar];
 }
 @end

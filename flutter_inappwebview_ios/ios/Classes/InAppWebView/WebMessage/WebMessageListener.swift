@@ -9,15 +9,15 @@ import Foundation
 import WebKit
 
 public class WebMessageListener: FlutterMethodCallDelegate {
-    static var METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_web_message_listener_"
+    static var METHOD_CHANNEL_NAME_PREFIX = "so.kontext/flutter_inappwebview_ios_kontext_web_message_listener_"
     var id: String
     var jsObjectName: String
     var allowedOriginRules: Set<String>
     var channelDelegate: WebMessageListenerChannelDelegate?
     weak var webView: InAppWebView?
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     
-    public init(plugin: SwiftFlutterPlugin, id: String, jsObjectName: String, allowedOriginRules: Set<String>) {
+    public init(plugin: SwiftFlutterKontextPlugin, id: String, jsObjectName: String, allowedOriginRules: Set<String>) {
         self.id = id
         self.plugin = plugin
         self.jsObjectName = jsObjectName
@@ -118,7 +118,7 @@ public class WebMessageListener: FlutterMethodCallDelegate {
         }
     }
     
-    public static func fromMap(plugin: SwiftFlutterPlugin, map: [String:Any?]?) -> WebMessageListener? {
+    public static func fromMap(plugin: SwiftFlutterKontextPlugin, map: [String:Any?]?) -> WebMessageListener? {
         guard let map = map else {
             return nil
         }

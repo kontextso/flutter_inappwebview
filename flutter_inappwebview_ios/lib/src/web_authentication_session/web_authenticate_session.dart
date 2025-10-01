@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 /// Object specifying creation parameters for creating a [IOSWebAuthenticationSession].
 ///
@@ -59,7 +59,7 @@ class IOSWebAuthenticationSession extends PlatformWebAuthenticationSession
   late final WebAuthenticationSessionCompletionHandler onComplete;
 
   static const MethodChannel _staticChannel = const MethodChannel(
-      'com.pichillilorenzo/flutter_webauthenticationsession');
+      'so.kontext/flutter_inappwebview_ios_kontext_webauthenticationsession');
 
   @override
   Future<IOSWebAuthenticationSession> create(
@@ -96,7 +96,7 @@ class IOSWebAuthenticationSession extends PlatformWebAuthenticationSession
     this.initialSettings =
         initialSettings ?? WebAuthenticationSessionSettings();
     channel = MethodChannel(
-        'com.pichillilorenzo/flutter_webauthenticationsession_$id');
+        'so.kontext/flutter_inappwebview_ios_kontext_webauthenticationsession_$id');
     handler = _handleMethod;
     initMethodCallHandler();
   }

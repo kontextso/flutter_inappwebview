@@ -9,8 +9,8 @@ import Foundation
 import WebKit
 
 public class InAppWebViewManager: ChannelDelegate {
-    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_manager"
-    var plugin: SwiftFlutterPlugin?
+    static let METHOD_CHANNEL_NAME = "so.kontext/flutter_inappwebview_ios_kontext_manager"
+    var plugin: SwiftFlutterKontextPlugin?
     var webViewForUserAgent: WKWebView?
     var defaultUserAgent: String?
     
@@ -18,7 +18,7 @@ public class InAppWebViewManager: ChannelDelegate {
     var windowWebViews: [Int64:WebViewTransport] = [:]
     var windowAutoincrementId: Int64 = 0
     
-    init(plugin: SwiftFlutterPlugin) {
+    init(plugin: SwiftFlutterKontextPlugin) {
         super.init(channel: FlutterMethodChannel(name: InAppWebViewManager.METHOD_CHANNEL_NAME, binaryMessenger: plugin.registrar!.messenger()))
         self.plugin = plugin
     }

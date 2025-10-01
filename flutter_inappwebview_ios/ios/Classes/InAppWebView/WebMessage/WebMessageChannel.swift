@@ -8,14 +8,14 @@
 import Foundation
 
 public class WebMessageChannel: FlutterMethodCallDelegate {
-    static var METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_web_message_channel_"
+    static var METHOD_CHANNEL_NAME_PREFIX = "so.kontext/flutter_inappwebview_ios_kontext_web_message_channel_"
     var id: String
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     var channelDelegate: WebMessageChannelChannelDelegate?
     weak var webView: InAppWebView?
     var ports: [WebMessagePort] = []
     
-    public init(plugin: SwiftFlutterPlugin, id: String) {
+    public init(plugin: SwiftFlutterKontextPlugin, id: String) {
         self.id = id
         self.plugin = plugin
         super.init()

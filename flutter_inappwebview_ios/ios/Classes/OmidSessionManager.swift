@@ -11,7 +11,7 @@ import OMSDK_Megabrainco
         let adSession: OMIDMegabraincoAdSession
     }
 
-    init ? (plugin: SwiftFlutterPlugin) {
+    init ? (plugin: SwiftFlutterKontextPlugin) {
         guard let registrar = plugin.registrar else {
             return nil
         }

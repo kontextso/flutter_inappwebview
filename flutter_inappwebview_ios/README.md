@@ -1,13 +1,9 @@
-# flutter\_inappwebview\_ios
+# flutter_inappwebview_ios_kontext
 
-The Apple iOS WKWebView implementation of [`flutter_inappwebview`](https://pub.dev/packages/flutter_inappwebview).
+Kontext-maintained Apple iOS WKWebView implementation of [`flutter_inappwebview_kontext`](https://pub.dev/packages/flutter_inappwebview_kontext).
 
 ## Usage
 
-This package is [endorsed](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#endorsed-federated-plugin),
-which means you can simply use `flutter_inappwebview`
-normally. This package will be automatically included in your app when you do,
-so you do not need to add it to your `pubspec.yaml`.
-
-However, if you `import` this package to use any of its APIs directly, you
-should add it to your `pubspec.yaml` as usual.
+Add `flutter_inappwebview_ios_kontext` to your `pubspec.yaml` when you want to
+use the Kontext platform implementation directly or when building with
+`flutter_inappwebview_kontext`.

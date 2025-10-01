@@ -22,7 +22,7 @@ import Foundation
 import AVFoundation
 import SafariServices
 
-public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
+public class SwiftFlutterKontextPlugin: NSObject, FlutterPlugin {
     
     var registrar: FlutterPluginRegistrar?
     var platformUtil: PlatformUtil?
@@ -66,7 +66,7 @@ public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
     }
     
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let _ = SwiftFlutterPlugin(with: registrar)
+        let _ = SwiftFlutterKontextPlugin(with: registrar)
     }
     
     public func detachFromEngine(for registrar: FlutterPluginRegistrar) {

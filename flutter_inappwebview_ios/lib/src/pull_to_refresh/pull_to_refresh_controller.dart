@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 /// Object specifying creation parameters for creating a [IOSPullToRefreshController].
 ///
@@ -134,7 +134,7 @@ class IOSPullToRefreshController extends PlatformPullToRefreshController
 extension InternalPullToRefreshController on IOSPullToRefreshController {
   void init(dynamic id) {
     channel = MethodChannel(
-        'com.pichillilorenzo/flutter_inappwebview_pull_to_refresh_$id');
+        'so.kontext/flutter_inappwebview_ios_kontext_pull_to_refresh_$id');
     handler = _handleMethod;
     initMethodCallHandler();
   }

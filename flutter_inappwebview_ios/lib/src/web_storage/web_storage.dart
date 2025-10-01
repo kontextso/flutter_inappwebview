@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 import '../in_app_webview/in_app_webview_controller.dart';
 

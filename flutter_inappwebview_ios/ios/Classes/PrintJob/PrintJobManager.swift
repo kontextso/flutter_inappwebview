@@ -8,10 +8,10 @@
 import Foundation
 
 public class PrintJobManager: NSObject, Disposable {
-    var plugin: SwiftFlutterPlugin?
+    var plugin: SwiftFlutterKontextPlugin?
     var jobs: [String: PrintJobController?] = [:]
     
-    public init(plugin: SwiftFlutterPlugin?) {
+    public init(plugin: SwiftFlutterKontextPlugin?) {
         super.init()
         self.plugin = plugin
     }

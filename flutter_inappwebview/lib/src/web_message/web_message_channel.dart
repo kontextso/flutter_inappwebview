@@ -1,4 +1,4 @@
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 import 'web_message_port.dart';
 
 ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageChannel}

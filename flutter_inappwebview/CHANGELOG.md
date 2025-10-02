@@ -1,3 +1,8 @@
+## 6.1.5+1.kontext.0
+
+- Renamed the umbrella package to `flutter_inappwebview_kontext` and pointed dependencies at the Kontext platform/interface packages.
+- Scoped registration to the Kontext Android and iOS implementations and updated the shared method-channel namespace to avoid collisions with upstream.
+
 ## 6.1.5
 
 - Updated dependencies to the latest versions for all platform implementations:

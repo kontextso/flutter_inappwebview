@@ -29,22 +29,16 @@ dependencies:
   pointer_interceptor: ^0.10.1+2
   # mime: ^1.0.4
   # connectivity: ^0.4.5+6
-  flutter_inappwebview:
+  flutter_inappwebview_kontext:
     path: ../
 
 dependency_overrides:
-  flutter_inappwebview_platform_interface:
+  flutter_inappwebview_platform_interface_kontext:
     path: ../../flutter_inappwebview_platform_interface
-  flutter_inappwebview_android:
+  flutter_inappwebview_android_kontext:
     path: ../../flutter_inappwebview_android
-  flutter_inappwebview_ios:
+  flutter_inappwebview_ios_kontext:
     path: ../../flutter_inappwebview_ios
-  flutter_inappwebview_macos:
-    path: ../../flutter_inappwebview_macos
-  flutter_inappwebview_web:
-    path: ../../flutter_inappwebview_web
-  flutter_inappwebview_windows:
-    path: ../../flutter_inappwebview_windows
 
 dev_dependencies:
   flutter_test:

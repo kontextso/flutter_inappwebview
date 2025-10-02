@@ -21,7 +21,7 @@
 
 library flutter_inappwebview;
 
-export 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart'
+export 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart'
     hide
         ChannelController,
         InternalChannelController,

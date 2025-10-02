@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:flutter_inappwebview_platform_interface_kontext/flutter_inappwebview_platform_interface_kontext.dart';
 
 ///{@macro flutter_inappwebview_platform_interface.PlatformChromeSafariBrowser}
 class ChromeSafariBrowser implements PlatformChromeSafariBrowserEvents {
